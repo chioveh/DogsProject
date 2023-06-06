@@ -3,39 +3,47 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('dog', {
+  sequelize.define('Dog', {
     id: {
       type: DataTypes.UUID, // UUID es un identificador unico
       defaultValue: DataTypes.UUIDV4, 
       primaryKey: true, // squelize nos pide indicar si es una PK
       allowNull: false, // tiene que tener un valor si o si
-      unique: true,
     },
     name: {
-      type: DataTypes.STRING, // string xq es texto "corto"
-      allowNull: false, // allowNull es para saber si se permite que este null (NO)
-    },
-    image: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
+      unique: true// valor unico
     },
-    height: { 
-      type: DataTypes.INTEGER, 
+    min_height: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    weight: {
-     type: DataTypes.INTEGER, 
-     allowNull: false,
+    max_height: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    min_weight: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    max_weight: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     life_span: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    created: {
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true// es opcional
+    },
+    createdInDb: {
       type: DataTypes.BOOLEAN,
-      defaultValue: true,
       allowNull: false,
-    },
+      defaultValue: true
+    }  
   },
-  { timestamps: false })
+  { timestamps: false });//indica que la tabla no tendrá columnas de "createdAt" y "updatedAt".
 };

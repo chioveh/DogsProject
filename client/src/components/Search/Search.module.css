@@ -1,0 +1,38 @@
+/* Estilos para el div principal */
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para el select */
+  .search input[type="text"] {
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Estilos para las opciones del select */
+  .select option {
+    padding: 8px;
+    font-size: 16px;
+  }
+  .landingButton {
+    background-color: #a49ea2;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .landingButton:hover {
+    background-color: #94cf16;
+  }
